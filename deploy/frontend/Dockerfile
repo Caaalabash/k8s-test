@@ -7,6 +7,6 @@ RUN npm run build
 
 FROM nginx:alpine
 WORKDIR /
-COPY deploy/frontend/site.conf /etc/nginx/conf.d/
+COPY deploy/frontend/site.template /etc/nginx/conf.d/
 COPY deploy/frontend/entry_point.sh /
 COPY --from=builder /dist /dist
