@@ -19,7 +19,7 @@ spec:
           ports:
             - containerPort: 800
           env:
-            # nginx反向代理地址
+            # nginx反向代理地址, 例如 http://<be-service-ip>:<be-service-port>
             - name: BACKEND_URL
               value: ""
 ---
