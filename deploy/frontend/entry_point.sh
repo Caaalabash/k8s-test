@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 nginx -t
 if [[ $? -eq 0 ]];then
     touch /tmp/container_ready
