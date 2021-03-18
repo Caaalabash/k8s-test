@@ -9,7 +9,7 @@ services:
     container_name: test_fe
     ports:
       - "8081:800"
-    entrypoint: ./entry_point.sh
+    entrypoint: /entry_point.sh
     restart: unless-stopped
     extra_hosts:
       - "dockerhost:172.17.0.1"
@@ -22,7 +22,7 @@ services:
     ports:
       - "3033:3000"
     restart: unless-stopped
-    entrypoint: ./entry_point.sh
+    entrypoint: /entry_point.sh
     extra_hosts:
       - "dockerhost:172.17.0.1"
 
