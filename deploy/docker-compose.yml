@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  test_frontend:
+    build:
+      context: ../
+      dockerfile: deploy/frontend/Dockerfile
+    image: test_fe_image
+    container_name: test_fe
+    ports:
+      - "8080:800"
+    entrypoint: ./entry_point.sh
+    restart: unless-stopped
+    extra_hosts:
+      - "dockerhost:172.17.0.1"
+  test_backend:
+    build:
+      context: ../
+      dockerfile: deploy/backend/Dockerfile
+    image: test_be_image
+    container_name: test_be
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    entrypoint: ./entry_point.sh
+    extra_hosts:
+      - "dockerhost:172.17.0.1"
+
+
